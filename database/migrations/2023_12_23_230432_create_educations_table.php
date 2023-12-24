@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->string('school_name');
-            $table->integer('start');
-            $table->integer('end');
+            $table->integer('start')->nullable();
+            $table->integer('end')->nullable();
             $table->timestamps();
         });
     }

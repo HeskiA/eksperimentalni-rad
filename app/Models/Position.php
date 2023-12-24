@@ -14,4 +14,9 @@ class Position extends Model
         'job_title',
         'organization'
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

@@ -14,4 +14,11 @@ class ContactInfo extends Model
         'type',
         'url'
     ];
+
+    protected $table = 'contactinfos';
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

@@ -16,4 +16,11 @@ class Education extends Model
         'end'
     ];
 
+    protected $table = 'educations';
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
 }
