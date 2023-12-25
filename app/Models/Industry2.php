@@ -9,4 +9,8 @@ class Industry2 extends Model
 {
     use HasFactory;
     protected $connection = 'mongodb';
+
+    protected $fillable = [
+        'industry_name'
+    ];
 }

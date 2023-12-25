@@ -26,10 +26,16 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactInfoController;
+use App\Http\Controllers\ContactInfo2Controller;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\Education2Controller;
 use App\Http\Controllers\IndustryController;
+use App\Http\Controllers\Industry2Controller;
 use App\Http\Controllers\PositionController;
+use App\Http\Controllers\Position2Controller;
 use App\Http\Controllers\RegionController;
+use App\Http\Controllers\Region2Controller;
+
 
 
 
@@ -78,17 +84,32 @@ Route::put('user/{user}', [UserController::class, 'update']);
 Route::get('contactinfo', [ContactInfoController::class, 'index']);
 Route::put('contactinfo/{contactinfo}', [ContactInfoController::class, 'update']);
 
+Route::get('mongocontactinfo', [ContactInfo2Controller::class, 'index']);
+Route::put('mongocontactinfo/{contactinfo}', [ContactInfo2Controller::class, 'update']);
+
 Route::get('education', [EducationController::class, 'index']);
 Route::put('education/{education}', [EducationController::class, 'update']);
+
+Route::get('mongoeducation', [Education2Controller::class, 'index']);
+Route::put('mongoeducation/{education}', [Education2Controller::class, 'update']);
 
 Route::get('industry', [IndustryController::class, 'index']);
 Route::put('industry/{industry}', [IndustryController::class, 'update']);
 
+Route::get('mongoindustry', [Industry2Controller::class, 'index']);
+Route::put('mongoindustry/{industry}', [Industry2Controller::class, 'update']);
+
 Route::get('position', [PositionController::class, 'index']);
 Route::put('position/{position}', [PositionController::class, 'update']);
 
+Route::get('mongoposition', [Position2Controller::class, 'index']);
+Route::put('mongoposition/{position}', [Position2Controller::class, 'update']);
+
 Route::get('region', [RegionController::class, 'index']);
 Route::put('region/{region}', [RegionController::class, 'update']);
+
+Route::get('mongoregion', [Region2Controller::class, 'index']);
+Route::put('mongoregion/{region}', [Region2Controller::class, 'update']);
 
 Route::get('/mongoprofile/{slug}', [ProfileController::class, 'show']);
 Route::resource('mongoprofiles', ProfileController::class)->only([

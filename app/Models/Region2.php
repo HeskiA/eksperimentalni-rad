@@ -9,4 +9,8 @@ class Region2 extends Model
 {
     use HasFactory;
     protected $connection = 'mongodb';
+
+    protected $fillable = [
+        'region_name'
+    ];
 }

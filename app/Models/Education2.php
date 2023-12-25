@@ -10,4 +10,11 @@ class Education2 extends Model
     use HasFactory;
     protected $connection = 'mongodb';
 
+    protected $fillable = [
+        'user_id',
+        'school_name',
+        'start',
+        'end'
+    ];
+
 }

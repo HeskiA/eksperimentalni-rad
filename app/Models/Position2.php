@@ -9,4 +9,10 @@ class Position2 extends Model
 {
     use HasFactory;
     protected $connection = 'mongodb';
+
+    protected $fillable = [
+        'user_id',
+        'job_title',
+        'organization'
+    ];
 }

@@ -9,4 +9,10 @@ class ContactInfo2 extends Model
 {
     use HasFactory;
     protected $connection = 'mongodb';
+
+    protected $fillable = [
+        'user_id',
+        'type',
+        'url'
+    ];
 }
