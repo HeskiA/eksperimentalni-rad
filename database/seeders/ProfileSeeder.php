@@ -33,7 +33,7 @@ class ProfileSeeder extends Seeder
         //
         $faker = \Faker\Factory::create();
         $faker->seed(1234);
-        $n = 10;
+        $n = 500;
         for($i=0; $i<$n; $i++)
         {
             $profile = new Profile;
