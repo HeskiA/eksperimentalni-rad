@@ -22,6 +22,7 @@ use App\Http\Resources\ContactInfoResource;
 use App\Models\ContactInfo;
 
 use App\Http\Resources\ProfileResource;
+use App\Http\Controllers\TestController;
 
 
 
@@ -62,4 +63,24 @@ Route::get('/contactinfo/{id}', function (string $id) {
 
 Route::get('/profile/{id}', function (string $id) {
     return new ProfileResource(User::findOrFail($id));
+});
+
+Route::get('/test/{slug}', [TestController::class, 'show']);
+Route::resource('tests', TestController::class)->only([
+    'destroy', 'show', 'store', 'update'
+ ]);
+
+Route::get('/ping', function (Request  $request) {    
+    $connection = DB::connection('mongodb');
+    $msg = 'MongoDB is accessible!';
+    try {  
+        $connection->command(['ping' => 1]);  
+    } catch (\Exception  $e) {  
+        $msg = 'MongoDB is not accessible. Error: ' . $e->getMessage();
+    }
+    return ['msg' => $msg];
+});
+
+Route::get('/debiv', function (Request  $request) {    
+    return ['msg' => "debiv"];
 });
