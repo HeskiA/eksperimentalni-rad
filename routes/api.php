@@ -24,6 +24,12 @@ use App\Models\ContactInfo;
 use App\Http\Resources\ProfileResource;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactInfoController;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\IndustryController;
+use App\Http\Controllers\PositionController;
+use App\Http\Controllers\RegionController;
 
 
 
@@ -66,10 +72,23 @@ Route::get('/profile/{id}', function (string $id) {
     return new ProfileResource(User::findOrFail($id));
 });
 
-Route::get('/test/{slug}', [TestController::class, 'show']);
-Route::resource('tests', TestController::class)->only([
-    'destroy', 'show', 'store', 'update'
- ]);
+Route::get('user', [UserController::class, 'index']);
+Route::put('user/{user}', [UserController::class, 'update']);
+
+Route::get('contactinfo', [ContactInfoController::class, 'index']);
+Route::put('contactinfo/{contactinfo}', [ContactInfoController::class, 'update']);
+
+Route::get('education', [EducationController::class, 'index']);
+Route::put('education/{education}', [EducationController::class, 'update']);
+
+Route::get('industry', [IndustryController::class, 'index']);
+Route::put('industry/{industry}', [IndustryController::class, 'update']);
+
+Route::get('position', [PositionController::class, 'index']);
+Route::put('position/{position}', [PositionController::class, 'update']);
+
+Route::get('region', [RegionController::class, 'index']);
+Route::put('region/{region}', [RegionController::class, 'update']);
 
 Route::get('/mongoprofile/{slug}', [ProfileController::class, 'show']);
 Route::resource('mongoprofiles', ProfileController::class)->only([
