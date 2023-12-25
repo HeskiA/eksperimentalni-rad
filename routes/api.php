@@ -23,6 +23,7 @@ use App\Models\ContactInfo;
 
 use App\Http\Resources\ProfileResource;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ProfileController;
 
 
 
@@ -69,6 +70,11 @@ Route::get('/test/{slug}', [TestController::class, 'show']);
 Route::resource('tests', TestController::class)->only([
     'destroy', 'show', 'store', 'update'
  ]);
+
+Route::get('/mongoprofile/{slug}', [ProfileController::class, 'show']);
+Route::resource('mongoprofiles', ProfileController::class)->only([
+     'destroy', 'show', 'store', 'update'
+]);
 
 Route::get('/ping', function (Request  $request) {    
     $connection = DB::connection('mongodb');
