@@ -42,6 +42,34 @@ Licensed to The Apache Software Foundation, http://www.apache.org/
 Benchmarking laravel.test (be patient).....done
 ```
 
+## API Endpointovi
 
+Za dohvaćanje podataka iz relacijske baze:
+
+- laravel.test/api/profile/<id profila>  (GET metoda, dohvaća iz više tablica sve podatke koji su potrebni za LinkedIn profil i vraća ih u JSON formatu)
+- laravel.test/api/user - GET metoda - vraća sve retke iz tablice Users
+- laravel.test/api/user/<id usera> - GET metoda - vraća jednog usera po ID-ju
+- laravel.test/api/user/<id usera> - PUT metoda - ažurira usera, u tijelu zahtjeva je potrebno poslati JSON s novim podacima
+- laravel.test/api/contactinfo - GET metoda - vraća sve retke iz tablice ContactInfo
+- laravel.test/api/contactinfo/<id> - GET metoda - vraća jedan objekt po ID-ju
+- laravel.test/api/contactinfo/<id> - PUT metoda - ažurira objekt, u tijelu zahtjeva je potrebno poslati JSON s novim podacima
+- laravel.test/api/education - GET metoda - vraća sve retke iz tablice Education
+- laravel.test/api/education/<id> - GET metoda - vraća jedan objekt po ID-ju
+- laravel.test/api/education/<id> - PUT metoda - ažurira objekt, u tijelu zahtjeva je potrebno poslati JSON s novim podacima
+- laravel.test/api/industry - GET metoda - vraća sve retke iz tablice Industry
+- laravel.test/api/industry/<id> - GET metoda - vraća jedan objekt po ID-ju
+- laravel.test/api/industry/<id> - PUT metoda - ažurira objekt, u tijelu zahtjeva je potrebno poslati JSON s novim podacima
+- laravel.test/api/position - GET metoda - vraća sve retke iz tablice Position
+- laravel.test/api/position/<id> - GET metoda - vraća jedan objekt po ID-ju
+- laravel.test/api/position/<id> - PUT metoda - ažurira objekt, u tijelu zahtjeva je potrebno poslati JSON s novim podacima
+- laravel.test/api/region - GET metoda - vraća sve retke iz tablice Region
+- laravel.test/api/region/<id> - GET metoda - vraća jedan objekt po ID-ju
+- laravel.test/api/region/<id> - PUT metoda - ažurira objekt, u tijelu zahtjeva je potrebno poslati JSON s novim podacima
+
+Za dohvaćanje podataka iz dokumentne baze vrijedi isto, ali uz prefiks mongo, npr:
+
+- laravel.test/api/mongoprofile/<id profila>
+- laravel.test/api/mongocontactinfo/<id>
+- itd...
 
 
